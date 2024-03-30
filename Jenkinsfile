@@ -64,7 +64,7 @@ pipeline {
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/cmercadal/minorista.git']]])
                     git branch: 'develop', fastForwardMode: 'FF', strategy: 'default', to: 'main'
                     git push origin main
-                }catch{
+                }catch (Exception e){
                     echo "Error ocurred while merging ${e.message}"
                 }
             }
