@@ -1,0 +1,12 @@
+cl/camila/service/MateriaServiceImpl.class
+cl/camila/controller/AlumnoController.class
+cl/camila/model/Materia.class
+cl/camila/ApiRest1Application.class
+cl/camila/repository/AlumnoReppository.class
+cl/camila/service/AlumnoService.class
+cl/camila/model/Alumno.class
+cl/camila/repository/MateriaRepository.class
+cl/camila/service/MateriaService.class
+cl/camila/controller/MateriaController.class
+cl/camila/service/AlumnoServiceImpl.class
+cl/camila/App.class
