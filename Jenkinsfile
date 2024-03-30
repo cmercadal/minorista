@@ -65,7 +65,7 @@ pipeline {
                     git branch: 'develop', fastForwardMode: 'FF', strategy: 'default', to: 'main'
                     git push origin main
                 }catch{
-                    echo "Error ocurred while merging: ${e.message}"
+                    echo "Error ocurred while merging ${e.message}"
                 }
             }
         }
