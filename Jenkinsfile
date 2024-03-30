@@ -62,7 +62,7 @@ pipeline {
                 try{
                     // Checkout the main branch
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/cmercadal/minorista.git']]])
-                    git branch: 'develop', fastForwardMode: 'FF', strategy: 'default', to: 'main'
+                    git branch: 'develop', changelog: false, credentialsId: 'cmercadal', message: 'Merge develop into master', nff: true, remote: 'origin'
                     git push origin main
                 }catch (Exception e){
                     echo "Error ocurred while merging ${e.message}"
