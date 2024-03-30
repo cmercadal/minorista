@@ -63,18 +63,5 @@ pipeline {
               color: COLOR_MAP[currentBuild.currentResult],
               message:"*${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More Info at: ${env.BUILD_URL}"
         }
-
-        success{
-            script{
-                try{
-                    // Checkout the main branch
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/cmercadal/minorista.git']]])
-                    git branch: 'develop', changelog: false, credentialsId: 'cmercadal', message: 'Merge develop into master', nff: true, remote: 'origin'
-                    git push origin main
-                }catch (Exception e){
-                    echo "Error ocurred while merging ${e.message}"
-                }
-            }
-        }
     }
 }
